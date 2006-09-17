@@ -21,6 +21,8 @@ external dependencies.
 
 Notes:
 
+ - there is a little bit of import-time magic: the name "ChosenLocatorId" is bound to
+   id of the locator that the package thinks is the best available one on the system
  - support for accessing GNS data is not yet working in version 0.1
  - accessing MaxMind data only works on unix until someone compiles the MaxMind
    C library that used to access their data for win32. Anyone able to do that?

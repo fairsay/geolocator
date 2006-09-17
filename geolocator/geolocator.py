@@ -15,9 +15,12 @@ MaxMind country & city geoip databases are supported, with support planned for:
 
  * others?
 
+On import, the package tries different locators & sets Locator to the best
+one it can successfully instantiate
+
 """
 
-__all__ = ["DummyLocator", "MaxMindCountryLocator", "MaxMindCityLocator", "GeoLocatorBase"]
+__all__ = ["DummyLocator", "MaxMindCountryLocator", "MaxMindCityLocator", "GeoLocatorBase", "ChosenLocatorId"]
 
 
 class GeoLocatorBase:
@@ -26,7 +29,7 @@ class GeoLocatorBase:
       "get distance between origin and location"
       return gislib.getDistanceByHaversine(origin, location)
 
-   def isWithinDistance(origin, location, distance):
+   def isWithinDistance(self, origin, location, distance):
       "return true if location is within the given distance from origin"
       return gislib.isWithinDistance(origin, location, distance)
 
@@ -38,9 +41,31 @@ class GeoLocatorBase:
 
 class DummyLocator(GeoLocatorBase, DummyProvider):
    "generic proxy/api to various data sources"
+   locator_id = "dummy_locator"
 
 class MaxMindCountryLocator(GeoLocatorBase, MaxMindCountryDataProvider):
    "for using the free country data"
+   locator_id = "maxmind_country_locator"
 
 class MaxMindCityLocator(GeoLocatorBase, MaxMindCityDataProvider):
    "for using the commercial city data"
+   locator_id = "maxmind_city_locator"
+
+
+# try to figure out which locator to use
+
+ChosenLocatorId = "dummy_locator"
+
+try:
+   l = MaxMindCountryLocator()
+   del l
+   ChosenLocatorId = "maxmind_country_locator"
+except Exception, e:
+   pass
+
+try:
+   l = MaxMindCityLocator()
+   del l
+   ChosenLocatorId = "maxmind_city_locator"
+except Exception, e:
+   pass

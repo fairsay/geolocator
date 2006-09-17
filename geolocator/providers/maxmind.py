@@ -9,9 +9,9 @@ import os
 
 __all__ = ["CountryProvider","CityProvider"]
 
-LOCATIONS   = ("./data", "/usr/share/GeoIP", "/usr/local/share/GeoIP")
+LOCATIONS = ("./data", "/usr/share/GeoIP", "/usr/local/share/GeoIP", "~/share/GeoIP")
 COUNTRYDATA_FILENAME = "GeoIP.dat"
-CITYDATA_FILENAME    = "GeoIPCity.dat"
+CITYDATA_FILENAME = "GeoIPCity.dat"
 
 class BaseProvider:
    "base class"
@@ -26,7 +26,7 @@ class BaseProvider:
       if filepath==None:
          for location in LOCATIONS:
             try:
-               filepath = location +  os.sep + self.filename
+               filepath = os.path.expanduser(location) +  os.sep + self.filename
                file = open(filepath)
                file.close()
                break
