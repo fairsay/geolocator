@@ -15,14 +15,6 @@ __all__ = ("GeolocatorTestSuite",)
 class DummyLocatorCase(unittest.TestCase):
    "test the default"
 
-class DummyCityIpProviderCase(unittest.TestCase):
-   ""
-
-class DummyLocationProviderCase(unittest.TestCase):
-   ""
-
-class DummyProviderCase(unittest.TestCase):
-
    def setUp(self):
       self.locator = GeoLocator()
       self.provider = MaxMindCityDataProvider()
@@ -59,10 +51,6 @@ class DummyProviderCase(unittest.TestCase):
    #def testCoordinatesForCountry(self):
    #   self.locator.getLocationByCountry(self.country)
 
-   # geoip city
-   def testCityForIp(self):
-      ""
-      self.assertRaises(NotImplementedError)
 
 class MaxMindCountryProviderCase:
 

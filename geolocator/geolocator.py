@@ -17,7 +17,7 @@ MaxMind country & city geoip databases are supported, with support planned for:
 
 """
 
-__all__ = ["DummyLocator", "MaxMindCountryLocator", "MaxMindCityLocator", "GeoLocatorBase"]
+__all__ = ["GeoLocator",]
 
 
 class GeoLocatorBase:

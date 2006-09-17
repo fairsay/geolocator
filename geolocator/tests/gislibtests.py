@@ -18,7 +18,7 @@ class GisLibCase(unittest.TestCase):
       self.oxlon = -1.255856
       self.distance = 70.0
 
-      lat, lon = gislib.getCoordinateDiffForDistance(self.oxlat, self.oxlon, self.distance)
+      lat, lon = gislib.getCoordinatesForDistance(self.oxlat, self.oxlon, self.distance)
       self.lat_extra, self.lon_extra = lat, lon
 
 

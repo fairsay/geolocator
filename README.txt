@@ -1,1 +1,1 @@
-This library can be installed using "python setup.py install".
+# No external dependencies.
