@@ -70,7 +70,7 @@ def DMSToDecimal((degrees,minutes,seconds)):
       return d
 
 
-def getCoordinateDiffForDistance(originlat, originlon, distance, units="km"):
+def getCoordinatesForDistance(originlat, originlon, distance, units="km"):
    """return longitude & latitude values that, when added to & subtraced from
    origin longitude & latitude, form a cross / 'plus sign' whose ends are
    a given distance from the origin"""

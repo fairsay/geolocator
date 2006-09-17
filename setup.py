@@ -39,7 +39,7 @@ if sys.version_info < (2, 3):
 doclines = __doc__.split("\n")
 
 setup(name="geolocator",
-      version="0.1",
+      version="0.1.1",
       maintainer="Petri Savolainen",
       maintainer_email="petri.savolainen@iki.fi",
       url = "http://geolocator.fairsay.com",

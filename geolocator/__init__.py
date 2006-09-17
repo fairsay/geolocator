@@ -1,3 +1,5 @@
-from geolocator import DummyLocator, MaxMindCityLocator, MaxMindCountryLocator, GeoLocatorBase
+from geolocator import DummyLocator, MaxMindCityLocator, MaxMindCountryLocator
 
-__all__ = ("DummyLocator", "MaxMindCityLocator", "MaxMindCountryLocator", "GeoLocatorBase")
+import tests
+
+__all__ = ("DummyLocator", "MaxMindCityLocator", "MaxMindCountryLocator", "tests")
