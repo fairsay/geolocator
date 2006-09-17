@@ -1,0 +1,16 @@
+Data sources:
+
+ - MaxMind free country data: http://www.maxmind.com/app/geoip_country
+
+ - GNS free data: http://earth-info.nga.mil/gns/html
+
+Prerequisites for accessing the MaxMind data:
+
+ - MaxMind C library must be installed
+   (see http://www.maxmind.com/app/api)
+
+ - MaxMind Python library must be installed
+   (see http://www.maxmind.com/app/api)
+
+When prerequisites are met, or if you don't need to access MaxMind data,
+just configure the data providers (see config.py) and run setup.py install.

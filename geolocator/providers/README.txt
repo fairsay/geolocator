@@ -1,0 +1,1 @@
+Users of this library are bound to have access to varying sources of information; some free, some commercial. The idea here is that it is possible to take a set of providers and then subclass a new provider that reflects what data one has access to.
